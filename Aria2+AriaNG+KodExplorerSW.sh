@@ -178,7 +178,7 @@ cat > /etc/aria2/aria2.conf <<EOF
 ## 文件保存相关 ##
 
 # 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置
-dir=/usr/share/nginx/kodexplorer/data/User/admin/home
+dir=/root/guazai/
 # 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M
 disk-cache=32M
 # 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc
@@ -226,7 +226,7 @@ save-session=/etc/aria2/aria2.session
 # 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0
 save-session-interval=0
 # 即使下载完成或删除也全部保存
-force-save=true
+force-save=false
 
 ## RPC相关设置 ##
 
@@ -311,15 +311,15 @@ fi
 
 # Download Kodexplorer
 mkdir -p /usr/share/nginx/kodexplorer && cd /usr/share/nginx/kodexplorer
-#wget https://github.com/p1956/DFGDGDDHDHFDHDHDHD/raw/master/kodexplorer4.40.zip
-curl -L https://github.com/p1956/DFGDGDDHDHFDHDHDHD/raw/master/kodexplorer4.40.zip  --output kodexplorer4.40.zip
+#wget https://static.kodcloud.com/update/download/kodexplorer4.51.zip
+curl -L https://static.kodcloud.com/update/download/kodexplorer4.51.zip  --output kodexplorer4.51.zip
 if [ $? -eq 0 ];then
     echo -e "${green} Kodexplorer下载成功 ${font}"
 else 
     echo -e "${red} Kodexplorer下载失败 ${font}"
     exit 1
 fi
-unzip kodexplorer4.40.zip
+unzip kodexplorer4.51.zip
 if [ $? -eq 0 ];then
     echo -e "${green} Kodexplorer解压成功 ${font}"
 else 
